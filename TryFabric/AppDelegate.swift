@@ -45,6 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK:Fabric
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        if Optimizely.handleOpen(url) {
+            return true;
+        }
+        return false;
+    }
+
     // Fabricで使うキーを取り出すためのメソッド群
     // 後ほど適切な場所に切り出す
     
